@@ -58,9 +58,13 @@ public class Labyrinth {
             return true;
         if (algorithm(x, y + 1))
             return true;
+        if (algorithm(x + 1, y + 1))
+            return true;
         if (algorithm(x - 1, y))
             return true;
         if (algorithm(x, y - 1))
+            return true;
+        if (algorithm(x - 1, y - 1))
             return true;
 
         labyrinth[x][y] = ' ';
@@ -75,7 +79,7 @@ public class Labyrinth {
 
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                if (Math.random() < 0.25)
+                if (Math.random() < 0.33)
                     labyrinth[i][j] = '#';
                 else
                     labyrinth[i][j] = ' ';
